@@ -1,0 +1,31 @@
+Python is a useful programming language.
+I am learning Python step by step.
+
+今天是一个适合学习的日子。
+我正在练习文件读取、字符串处理和简单的数据统计。
+
+Python can be used for AI, data analysis, web development, and automation.
+AI is changing many fields, but basic programming skills are still important.
+
+In this exercise, I want to test:
+1. how to read a text file;
+2. how to count lines;
+3. how to count words;
+4. how to search keywords;
+5. how to handle Chinese and English text.
+
+学习编程不是只看教程，而是要不断练习。
+有时候代码会报错，但报错也是学习的一部分。
+
+Python Python Python
+AI AI
+data data data analysis
+
+My goals:
+- learn Python basics;
+- understand functions;
+- practice file operations;
+- build small projects;
+- prepare for AI-related jobs.
+
+This is the last line of the test file.

@@ -1,0 +1,29 @@
+[INFO] Start training model: SimpleCNN
+[INFO] Dataset: demo_classification
+[INFO] Batch size: 32
+[INFO] Learning rate: 0.001
+
+epoch=1 loss=0.823 acc=0.710
+epoch=2 loss=0.641 acc=0.782
+epoch=3 loss=0.512 acc=0.831
+epoch=4 loss=0.476 acc=0.846
+epoch=5 loss=0.439 acc=0.862
+
+[INFO] Validation started...
+
+epoch=6 loss=0.421 acc=0.871
+epoch=7 loss=0.418 acc=0.869
+epoch=8 loss=0.392 acc=0.884
+epoch=9 loss=0.405 acc=0.879
+epoch=10 loss=0.371 acc=0.891
+
+[WARNING] GPU memory usage is high.
+
+epoch=11 loss=0.356 acc=0.899
+epoch=12 loss=0.349 acc=0.904
+epoch=13 loss=0.361 acc=0.902
+epoch=14 loss=0.337 acc=0.911
+epoch=15 loss=0.329 acc=0.914
+
+[INFO] Training finished.
+[INFO] Best checkpoint saved to checkpoints/best_model.pt
