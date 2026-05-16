@@ -7,60 +7,47 @@
 # 6. 找出包含 "Python" 的所有行
 '''
 
-import sys
+import argparse
 
-def read_print(file):
+def analyze_file(file):
     with open(file, 'r', encoding='utf-8') as f:
-        content = f.read()
+        lines = f.readlines()
     
-    return content
+    total_lines = len(lines)
+    non_empty_lines = 0
+    python_count = 0
+    python_lines = []
 
-def num_line(file):
-    num = 0
-    with open(file, 'r', encoding='utf-8') as f:
-        for line in f:
-            num = num + 1
+    for line in lines:
+        if line.split():
+            non_empty_lines += 1
+        
+        if 'Python' in line:
+            python_count += line.count('Python')
+            python_lines.append(line)
 
-    return num
+    return{
+        'lines':lines,
+        'total_lines':total_lines,
+        'non_empty_lines':non_empty_lines,
+        'python_count':python_count,
+        'python_lines':python_lines,
+    }
 
-def num_fkong(file):
-    num = 0
-    with open(file, 'r', encoding='utf-8') as f:
-        for line in f:
-            if line.split():
-                num = num + 1
-    
-    return num
-
-def num_python(file):
-    num = 0
-    with open(file, 'r', encoding='utf-8') as f:
-        for line in f:
-            num = num + line.count('Python')
-    
-    return num
-
-def line_python(file):
-    with open(file, 'r', encoding='utf-8') as f:
-        for line in f:
-            if 'Python' in line:
-                print(line)
-
-def main(file='practice.txt'):
-    content = read_print(file)
-    nol = num_line(file)
-    nof = num_fkong(file)
-    nop = num_python(file)
+def main(file):
+    data = analyze_file(file)
     print(f'文件内容如下：')
-    print(content)
-    print(f'文件总行数为 {nol}')
-    print(f'非空行数量为 {nof}')
-    print(f'Python 出现了 {nop} 次')
-    line_python(file)
+    print(''.join(data['lines']))
+    print('文件总行数为', data['total_lines'])
+    print('非空行数量为', data['non_empty_lines'])
+    print(f'Python 出现了 {data["python_count"]} 次')
+    print('包含Python的行如下')
+    print(data['python_lines'])
 
 if __name__ == '__main__':
-    if len(sys.argv) >= 2:
-        file = sys.argv[1]
-        main(file)
-    else:
-        main()
+    parser = argparse.ArgumentParser(
+        description='要处理的文件'
+    )
+    parser.add_argument('--file', default='practice1.txt', help='输入要处理的文件名')
+    args = parser.parse_args()
+    main(args.file)
